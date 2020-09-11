@@ -1,9 +1,26 @@
-$("#signin-button").on("click", function () {
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+
+$("#signin-button").on("click", function (event) {
+  event.preventDefault();
+
   localStorage.clear();
   let userData = {};
 
+  
+
   userData["username"] = document.getElementById("username-input").value;
   userData["password"] = document.getElementById("password-input").value;
+
+  if (userData["password"].length < 8) {
+    toastr.error("Password too short");
+    return;
+  }
+
+  toastr.info("Authenticating.....");
+  toastr.info("Please Wait");
 
   console.log(userData);
 
@@ -21,12 +38,16 @@ $("#signin-button").on("click", function () {
       toastr.error("Authentication Failed.");
     },
     success: function (msg) {
-      console.log(msg);
       localStorage["refresh"] = msg.refresh;
       localStorage["username"] = msg.username;
       localStorage["group"] = msg.group;
       localStorage["access"] = msg.access;
       window.location = window.location.origin;
+      toastr.success("Logged in");
+      toastr.info("Redirecting...");
+      sleep(1000).then(() => {
+        window.location = window.location.origin;
+    });
     },
   });
 });

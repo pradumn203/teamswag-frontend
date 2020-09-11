@@ -179,7 +179,7 @@
       <!--Card content-->
       <div class="card-body px-lg-5 pt-0">
         <!-- Form -->
-        <form class="text-center" style="color: #757575" action="#!">
+        <form class="text-center" style="color: #757575" action="#">
           <div class="form-row">
             <div class="col">
               <!-- First name -->
@@ -197,7 +197,7 @@
               <!-- Last name -->
               <div class="md-form">
                 <input
-                  type="email"
+                  type="text"
                   id="materialRegisterFormLastName"
                   class="form-control"
                   required
@@ -250,7 +250,7 @@
           <!-- Phone number -->
           <div class="md-form">
             <input
-              type="password"
+              type="text"
               id="materialRegisterFormPhone"
               class="form-control"
               aria-describedby="materialRegisterFormPhoneHelpBlock"
@@ -265,7 +265,7 @@
           </div>
 
           <!-- Sign up button -->
-          <button
+          <button id="reg-button"
             class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
             type="submit"
           >
@@ -400,14 +400,24 @@
     </footer>
     <!-- Footer -->
 
-    <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!-- Toastr -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+    ></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Register JavaScript -->
+    <script type="text/javascript" src="js/register.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+  />
 
     <!-- Custom scripts -->
     <script>
